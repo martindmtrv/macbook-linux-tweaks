@@ -1,0 +1,8 @@
+[Martin's Overrides for MacBook Pro 2012 Apple Touchpad]
+MatchUdevType=touchpad
+MatchName=bcm5974
+AttrTouchSizeRange=150:130
+AttrPalmSizeThreshold=2000
+AttrPressureRange=80:40
+AttrPalmPressureThreshold=300
+AttrThumbPressureThreshold=300
