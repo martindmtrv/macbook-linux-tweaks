@@ -27,3 +27,27 @@ sudo udevadm trigger
 ```
 
 This file is specific to a 2012 mid non retina Macbook Pro running Ubuntu 21.04
+
+# /usr/share/applications/brave-browser.desktop
+
+Custom configuration for what brave browser launch icon does. Main changes are:
+
+Enable Wayland support for Brave Rewards; probably once Chromium upstream is updated this will not be needed
+
+```
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
+```
+
+Enable 2 finger touchpad overflow history navigation
+
+```
+---enable-features=TouchpadOverscrollHistoryNavigation
+```
+
+These additional flags are added into the execute command of the Brave Browser icon like so:
+
+```
+Exec=/usr/bin/brave-browser-stable --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
+
+```
