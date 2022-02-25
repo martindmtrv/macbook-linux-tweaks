@@ -51,3 +51,15 @@ These additional flags are added into the execute command of the Brave Browser i
 Exec=/usr/bin/brave-browser-stable --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
 
 ```
+
+# /etc/systemd/logind.conf
+
+This file has changes to how LID state changes are handled. Normally I want a lid close to suspend (even when plugged in or docked).
+
+To make changes or disable lid functionanilty just add 'ignore' to the end of these options
+
+```
+HandleLidSwitch=suspend
+HandleLidSwitchExternalPower=suspend
+HandleLidSwitchDocked=suspend
+```
