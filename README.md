@@ -67,3 +67,14 @@ HandleLidSwitchDocked=suspend
 # /home/martindimitrov/.themes/martin/gnome-shell/gnome-shell.css
 
 This file will overrite some default css from Ubuntu. Right now only using it to make the notifications not as wide since default is too much. Set to 300px MAX. Other UI quirks can be added here as normal CSS code
+
+# AppImageLauncher
+
+Install application to handle .AppImages:
+
+```
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt install appimagelauncher
+```
+
+This allows you to add shortcuts to appimages and store them in a central location ~/Applications
