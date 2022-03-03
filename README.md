@@ -17,7 +17,7 @@ pulseaudio --start
 
 # /etc/udev/hwdb.d
 
-Used to remap some hardware keys on the keyboard of my macbook pro. Namely remap the eject key to be a fwd delete key instead (since I replaced the CD drive with another SSD)
+Used to remap some hardware keys on the keyboard of my macbook pro. Namely remap the eject key to be a fwd delete key instead (since I replaced the CD drive with another SSD). Also mapped right command to to be leftmeta as well so it does everything that left command button does (keyboard shortcuts etc)
 
 To reload config run
 

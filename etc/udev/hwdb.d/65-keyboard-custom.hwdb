@@ -1,2 +1,5 @@
 evdev:input:b0003v05ACp0252e0111*
  KEYBOARD_KEY_C00B8=delete
+
+evdev:input:b0003v05ACp0252e0111*
+ KEYBOARD_KEY_700E7=leftmeta
