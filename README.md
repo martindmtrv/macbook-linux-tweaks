@@ -82,3 +82,20 @@ sudo apt install appimagelauncher
 ```
 
 This allows you to add shortcuts to appimages and store them in a central location ~/Applications
+
+# /home/martindimitrov/.local/share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/extension.js
+
+Modified extension panel OSD to force notifications always collapsed regardless of notification urgency. Relevant code changes from upstream is simply commenting out the check as follows:
+
+```
+// DO NOT CARE ABOUT Urgency.CRITICAL always be collapsed by default
+    // Martin changes BEGIN
+    if (/*this._notification.urgency == Urgency.CRITICAL || */
+        // Martin changes END
+        // JRL changes begin
+        getForce_expand() ||
+        // JRL changes end
+
+```
+
+Could probably make this into a PR and add a toggle for this feature however I don't have a gitlab account.
