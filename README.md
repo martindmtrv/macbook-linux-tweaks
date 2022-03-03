@@ -28,9 +28,13 @@ sudo udevadm trigger
 
 This file is specific to a 2012 mid non retina Macbook Pro running Ubuntu 21.04
 
-# /usr/share/applications/brave-browser.desktop
+# /home/martindimitrov/.local/share/applications/brave-browser.desktop
 
-Custom configuration for what brave browser launch icon does. Main changes are:
+Custom configuration for what brave browser launch icon does.
+
+This is is .local so that apt upgrades do not reset this. If there is a worthwhile change in this .desktop from upstream it will need to be manually added later (shouldn't be a huge problem though for now...)
+
+Main changes are:
 
 Enable Wayland support for Brave Rewards; probably once Chromium upstream is updated this will not be needed
 
