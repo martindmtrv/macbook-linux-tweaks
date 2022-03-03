@@ -63,3 +63,7 @@ HandleLidSwitch=suspend
 HandleLidSwitchExternalPower=suspend
 HandleLidSwitchDocked=suspend
 ```
+
+# /home/martindimitrov/.themes/martin/gnome-shell/gnome-shell.css
+
+This file will overrite some default css from Ubuntu. Right now only using it to make the notifications not as wide since default is too much. Set to 300px MAX. Other UI quirks can be added here as normal CSS code
