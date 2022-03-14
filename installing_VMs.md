@@ -5,7 +5,7 @@ Switched since performance is much better under linux systems for virtualization
 Related packages to install:
 
 ```
-sudo apt install libguestfs virt-manager virt-viewer dnsmasq vde2 bridge-utils netcat-openbsd
+yay -S libguestfs virt-manager virt-viewer dnsmasq vde2 bridge-utils netcat-openbsd
 ```
 
 Make sure daemon is running

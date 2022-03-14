@@ -1,19 +1,8 @@
-Some tweaks used to customize my Ubuntu setup
+Some tweaks used to customize my EndeavorOs Arch Linux setup
 
 # /etc/libinput/local-overrides.quirks
 
 Adds some configuration of the libinput drivers for touchpads. Setup so the touch detection area is more generous since it often would think my palm is present for no reason and stop the cursor. Log out and back in to reload this config.
-
-# /etc/pulse/daemon.conf
-
-To enable instant volume changes (for some reason default is to delay which is a big janky).
-
-To reload after changing:
-
-```
-pulseaudio --k
-pulseaudio --start
-```
 
 # /etc/udev/hwdb.d
 
@@ -26,9 +15,9 @@ sudo systemd-hwdb update
 sudo udevadm trigger
 ```
 
-This file is specific to a 2012 mid non retina Macbook Pro running Ubuntu 21.04
+This file is specific to a 2012 mid non retina Macbook Pro
 
-# /home/martindimitrov/.local/share/applications/brave-browser.desktop
+# /home/martindimitrov/.config/brave-flags.conf
 
 Custom configuration for what brave browser launch icon does.
 
@@ -39,8 +28,7 @@ Main changes are:
 Enable Wayland support for Brave Rewards; probably once Chromium upstream is updated this will not be needed
 
 ```
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+--enable-features=UseOzonePlatform --ozone-platform=wayland
 ```
 
 Enable 2 finger touchpad overflow history navigation
@@ -49,12 +37,7 @@ Enable 2 finger touchpad overflow history navigation
 ---enable-features=TouchpadOverscrollHistoryNavigation
 ```
 
-These additional flags are added into the execute command of the Brave Browser icon like so:
-
-```
-Exec=/usr/bin/brave-browser-stable --enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation --ozone-platform=wayland
-
-```
+These additional flags are added into the brave-flags.conf file under .config
 
 # /etc/systemd/logind.conf
 
@@ -67,6 +50,10 @@ HandleLidSwitch=suspend
 HandleLidSwitchExternalPower=suspend
 HandleLidSwitchDocked=suspend
 ```
+
+# /etc/UPower/UPower.conf
+
+Set IgnoreLid=true this disables any lid detection from GNOME meaning that it will sleep when lid closed even if docked. (will respect the rules in /etc/systemd/login.conf)
 
 # /home/martindimitrov/.themes/martin/gnome-shell/gnome-shell.css
 
@@ -82,20 +69,3 @@ sudo apt install appimagelauncher
 ```
 
 This allows you to add shortcuts to appimages and store them in a central location ~/Applications
-
-# /home/martindimitrov/.local/share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/extension.js
-
-Modified extension panel OSD to force notifications always collapsed regardless of notification urgency. Relevant code changes from upstream is simply commenting out the check as follows:
-
-```
-// DO NOT CARE ABOUT Urgency.CRITICAL always be collapsed by default
-    // Martin changes BEGIN
-    if (/*this._notification.urgency == Urgency.CRITICAL || */
-        // Martin changes END
-        // JRL changes begin
-        getForce_expand() ||
-        // JRL changes end
-
-```
-
-Could probably make this into a PR and add a toggle for this feature however I don't have a gitlab account.
