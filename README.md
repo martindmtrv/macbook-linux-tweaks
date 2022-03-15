@@ -74,6 +74,8 @@ This allows you to add shortcuts to appimages and store them in a central locati
 
 Had some weird boot options so sometimes it would not boot directly into OS (stuck in GRUB terminal).
 
+These commands should also be used in a LIVE CD in case of some boot problems (from resizing or moving partitions)
+
 ```
 yum -S update-grub
 update-grub
