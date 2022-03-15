@@ -69,3 +69,16 @@ sudo apt install appimagelauncher
 ```
 
 This allows you to add shortcuts to appimages and store them in a central location ~/Applications
+
+# setting GRUB so it boots directly into the OS
+
+Had some weird boot options so sometimes it would not boot directly into OS (stuck in GRUB terminal).
+
+```
+yum -S update-grub
+update-grub
+```
+
+```
+sudo grub-install <DRIVE /dev/sda usually>
+```
