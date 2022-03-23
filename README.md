@@ -84,3 +84,13 @@ update-grub
 ```
 sudo grub-install <DRIVE /dev/sda usually>
 ```
+
+# /home/martindimitrov/.bashrc
+
+Storing my bash configs here. Only really added a few macros in there.
+
+To reload the config after changing it run
+
+```
+source .bashrc
+```
