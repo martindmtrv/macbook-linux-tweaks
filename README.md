@@ -85,6 +85,24 @@ update-grub
 sudo grub-install <DRIVE /dev/sda usually>
 ```
 
+Sometimes if I break my install somehow; I can recover grub from a live USB. To do this simply mount both the linux partition and boot partition and chroot in:
+
+```
+# mount main partition and chroot
+sudo mount /dev/sdb3 /mnt
+sudo arch-chroot /mnt
+
+# mount efi partition
+sudo mount /dev/sdb1 /boot/efi
+```
+
+Then simply just run the same as above so 
+
+```
+sudo update-grub
+sudo grub-install
+```
+
 # /home/martindimitrov/.bashrc
 
 Storing my bash configs here. Only really added a few macros in there.
@@ -94,3 +112,29 @@ To reload the config after changing it run
 ```
 source .bashrc
 ```
+
+# OpenPenTablet
+
+Install this package to get tablet support. For use with handwriting tools (tutoring etc)...
+
+After installing from AUR 
+
+`yay -S opentabletdriver`
+
+it must be enabled from systemctl user:
+
+`systemctl enable --user opentabletdriver`
+
+I also had to reboot before it would work. Configure through GUI.
+
+
+# /etc/auto-cpufreq.conf
+
+Alter the auto-cpufreq configuration. Since switching to i7 using 'performance' governor spins up the fans like
+crazy (despite the thermal repaste). Switched to 'conservative' on power to allow for a more pleasant thermal experience.
+
+Perhaps make further optimizations later to limit the max frequencies, but for now it will stay as such.
+
+To reload the config after making changes to `/etc/auto-cpufreq.conf`:
+
+`sudo systemctl reload auto-cpufreq.service`
