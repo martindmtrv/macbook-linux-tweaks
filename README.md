@@ -138,3 +138,9 @@ Perhaps make further optimizations later to limit the max frequencies, but for n
 To reload the config after making changes to `/etc/auto-cpufreq.conf`:
 
 `sudo systemctl reload auto-cpufreq.service`
+
+# Mac startup chime
+
+If you clear NVMRAM it will full blast the mac startup sound. Fix described in AUR involves writing to NVRAM vars to ensure that it is set to 0.
+
+https://wiki.archlinux.org/title/mac#Mute_startup_chime
