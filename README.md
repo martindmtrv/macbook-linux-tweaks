@@ -144,3 +144,19 @@ To reload the config after making changes to `/etc/auto-cpufreq.conf`:
 If you clear NVMRAM it will full blast the mac startup sound. Fix described in AUR involves writing to NVRAM vars to ensure that it is set to 0.
 
 https://wiki.archlinux.org/title/mac#Mute_startup_chime
+
+# Handling GNOME updates
+
+When Gnome updates extensions will break. Sometimes they still work but did not get the "supported version" in the metadata.json
+
+Go into it and tweak it under `~/.local/share/gnome-shell/extensions/<extension name>/metadata.json`.
+
+```
+...
+"shell-version": [
+    ...,
+    "42" // add latest version here in this case GNOME 42
+],
+```
+
+This does not always work if the tweak needs some bug fixes; then consult their github page as sometimes people already found fixes.
